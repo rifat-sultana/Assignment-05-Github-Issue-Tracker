@@ -175,3 +175,5 @@ Output:
 ```
 Hello Rahim
 ```
+
+Backtick (` `) + ${} ব্যবহার করে string লিখলে সেটাকে Template Literal বলে।
