@@ -23,25 +23,25 @@
 <section class="max-w-md mx-auto" >
    <div class="mx-auto" > 
   <img class=" mx-auto my-10 " src="./assets/github-logo.png" alt="github logo">
-  <h1 class="text-4xl text-center font-bold mb-2"> Github Issue Tracker </h1>
-  <p class="text-[#64748B] text-center text-xl">Sign in to manage your issues</p>
+  <h1 class="text-3xl text-center font-bold mb-2"> Github Issue Tracker </h1>
+  <p class="text-[#64748B] text-center text-[18px]">Sign in to manage your issues</p>
   </div>
 </section>
 
 <section class="grid items-center p-5 ">
   <fieldset class="fieldset">
     <legend class="fieldset-legend text-xl font-bold"> Username </legend>
-    <input type="text" class="input text-xl text-[#71717A] px-10 w-full rounded-md" placeholder="Enter Username" />
-    <p class="label text-[#4A00FF] text-base">Default: Admin</p>
+    <input id="input-username" type="text" class="input text-xl text-[#71717A] px-10 w-full rounded-md" placeholder="Enter Username" />
+    <p class="label text-[#4A00FF] text-base">Default: admin</p>
   </fieldset>
 
   <fieldset class="fieldset">
     <legend class="fieldset-legend text-xl font-bold"> Password </legend>
-    <input type="password" class="input text-xl text-[#71717A] w-full rounded-sm"  placeholder="Enter Password" />
+    <input id="input-password" type="password" class="input text-xl text-[#71717A] w-full rounded-sm"  placeholder="Enter Password" />
     <p class="label text-[#4A00FF] text-base">Default: admin123</p>
   </fieldset>
 
-<button id="login-btn" class="btn btn-primary mt-4 p-6 text-xl rounded-md">Sign In</button>
+<button id="signin-btn" class="btn btn-primary mt-4 p-6 text-xl rounded-md">Sign In</button>
 
 </section>
 
@@ -54,16 +54,21 @@
 </div>
 
 <section>
-<p class="text-center text-gray-500 mb-3">
-  Demo Credentials:
-</p>
+      <p class="text-center text-gray-500 mb-3">
+         Demo Credentials:
+      </p>
 
-<div class="bg-gray-100 rounded-lg p-4 mx-5 text-center">
-  <p><b>Username:</b> admin</p>
-  <p><b>Password:</b> admin123</p>
-</div>
+   <div class="bg-gray-100 rounded-lg p-4 mx-5 text-center">
+      <p> <span class="font-bold">  Username:</span> admin </p>
+      <p> <span class="font-bold"> Password:</span> admin123</p>
+    </div>
  </section>
 
+
+
+
+
+ <script src="./script/signin.js"></script>
 
 </body>
 </html>
