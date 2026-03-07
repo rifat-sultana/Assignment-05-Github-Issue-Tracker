@@ -50,34 +50,36 @@ const showIssues = (issues) =>{
   const container = document.getElementById("issue-container")
   issues.forEach(issue =>{
     container.innerHTML +=`
-    <div class="bg-white rounded-lg shadow p-4">
+    <div class="bg-white rounded-lg shadow border-2 p-4">
       <div>
        <img src=""
-        <h3 class="font-semibold text-sm mb-2">
+        <h3 class="font-bold text-black text-sm mb-2">
           ${issue.title}
         </h3>
-        <p class="text-xs text-gray-500 mb-3">
+        <p class="text-xs text-gray-700 mb-3">
           ${issue.description} 
          </P>
 
     <div class="flex gap-2 mb-3"> 
-       <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded">
+  
+        <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded">
            BUG
        </span>
 
-       <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded">
+       <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-2 rounded">
           HELP WANTED
         </span>
      </div>
+
      <hr>
 
-       <p class="text-xs text-gray-400">
+       <p class="text-xs text-gray-400 mt-2">
           #${issue.id} by ${issue.author}
        </p>
 
        <p class="text-xs text-gray-400">
            ${issue.updatedAt}
-           </p>
+       </p>
 
 </div>
 

@@ -14,7 +14,7 @@ document.getElementById("signin-btn").addEventListener("click", function(){
     if(userName == "admin" && passWord == "admin123"){
       alert("signin success");
 
-      window.location.replace("/githubpage.html")
+    window.location.href = "githubissue.html"
 
     } else{
       alert("signin failed"); 
