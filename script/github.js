@@ -1,3 +1,7 @@
+
+let allIssues = [];
+
+
 const buttons = document.querySelectorAll(".tab-btn");
 
 buttons.forEach(btn => {
@@ -27,11 +31,16 @@ const loadAll= () =>{
 .then(response => response.json())
 .then(data => {
     console.log(data)
-    showIssues(data.data)
+    allIssues = data.data;
+
+   showIssues(allIssues);
 });
 
 };
 
+  const showAll = () => { 
+  showIssues(allIssues);
+};
 // assignee: "jane_smith"
 // author: "john_doe"
 // createdAt: "2024-01-15T10:30:00Z"
@@ -46,11 +55,38 @@ const loadAll= () =>{
 // title: "Fix navigation menu on mobile devices"
 // updatedAt: 2024-01-15T10:30:00Z"
 
+const showOpen = () => {
+
+  const openIssues= allIssues.filter(issue => issue.status === "open");
+  console.log(openIssues);
+  showIssues(openIssues);
+
+};
+
+const showClosed = () => {
+
+  const closedIssues = allIssues.filter(issue => issue.status === "closed");
+  console.log(closedIssues);
+  showIssues(closedIssues);
+}
+
+
+
+
+
 const showIssues = (issues) =>{
   const container = document.getElementById("issue-container")
+  container.innerHTML = "";
+
   issues.forEach(issue =>{
+
+       const borderColor =
+
+    issue.status === "open" ? "border-green-500" : "border-purple-500";
+
+
     container.innerHTML +=`
-    <div class="bg-white rounded-lg shadow border-2 p-4">
+    <div class="bg-white rounded-lg shadow border-t-4 ${borderColor} p-4">
       <div>
        <img src=""
         <h3 class="font-bold text-black text-sm mb-2">
