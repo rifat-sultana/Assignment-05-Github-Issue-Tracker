@@ -3,9 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>  Github Page </title>
+
+<!-- Tailwind+ daisyUI -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+     *{
+          font-family: "Geist", sans-serif;
+     }
+
+</style>
+
+
 </head>
+
 <body>
- githubpage
-</body>
+ 
+<section>
+
+  <navbar> 
+  <div class="flex items-center justify-between px-6 py-4 border-2 shadow-md">
+
+    <!-- left side (logo + title) -->
+    <div class="flex items-center gap-3">
+      <img src="./assets/github-logo.png" class="w-10" alt="github-logo">
+      <h3 class="text-xl font-bold">GitHub Issues Tracker</h3>
+    </div>
+
+    <!-- right side -->
+    <div class="join">
+
+      <label class="input input-bordered join-item flex items-center gap-2">
+        <input type="text" class="grow" placeholder="Search issues..." />
+      </label>
+
+      <button class="btn btn-primary join-item">
+        + New Issue
+      </button>
+
+    </div>
+
+  </div>
+</navbar>
+</section>
+
+</body> 
 </html>
