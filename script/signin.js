@@ -13,8 +13,11 @@ document.getElementById("signin-btn").addEventListener("click", function(){
     // 3.match username and pass
     if(userName == "admin" && passWord == "admin123"){
       alert("signin success");
+
+      window.location.replace("/githubpage.html")
+
     } else{
-      alert("signin failed");
+      alert("signin failed"); 
       return;
     }
 })
