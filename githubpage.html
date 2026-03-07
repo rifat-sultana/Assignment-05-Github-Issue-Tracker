@@ -9,22 +9,24 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
 <style>
      *{
           font-family: "Geist", sans-serif;
      }
-
 </style>
-
-
 </head>
 
-<body>
+<body class="bg-gray-50 min-h-screen">
  
 <section>
 
   <navbar> 
-  <div class="flex items-center justify-between px-6 py-4 border-2 shadow-md">
+  <div class="bg-white flex items-center justify-between px-6 py-4 border-2 shadow-md">
 
     <!-- left side (logo + title) -->
     <div class="flex items-center gap-3">
@@ -48,6 +50,36 @@
   </div>
 </navbar>
 </section>
+
+<main class=" bg-gray-50  max-w-6xl mx-auto px-6 py-10 ">
+
+  <section> 
+  <div class=" flex flex-col gap-8"> 
+  <div class="bg-white rounded-md shadow p-4 ">
+    <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50   rounded-md shadow"> All</button>
+    <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Open</button>
+    <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Closed</button>
+  </div>
+  </div>
+</section>
+
+   <div class="bg-white rounded-nd shadow p-6">
+    <img src="./assets/Aperture.png" alt="Aperture.png">
+     <h1 class="font-bold font-3xl"> 50 issues </h1>
+     <p class="text-[#64748B]">Track and manage your project issues </p>
+
+  </div>
+
+
+<!-- issue card grid -->
+<div class="grid grid-cols-4 gap-6 mt-6">
+
+</div>
+
+
+</main>
+
+<script src="./script/github.js"> </script>
 
 </body> 
 </html>
