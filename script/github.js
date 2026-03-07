@@ -16,3 +16,73 @@ buttons.forEach(btn => {
 
   });
 });
+
+
+fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+.then(response => response.json())
+.then(data => console.log(data));
+
+const loadAll= () =>{
+ fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    showIssues(data.data)
+});
+
+};
+
+// assignee: "jane_smith"
+// author: "john_doe"
+// createdAt: "2024-01-15T10:30:00Z"
+// description: "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior."
+// id: 1
+// labels: Array(2)
+// 0: "bug"
+// 1: "help wanted"
+// length: 2
+// priority: "high"
+// status: "open"
+// title: "Fix navigation menu on mobile devices"
+// updatedAt: 2024-01-15T10:30:00Z"
+
+const showIssues = (issues) =>{
+  const container = document.getElementById("issue-container")
+  issues.forEach(issue =>{
+    container.innerHTML +=`
+    <div class="bg-white rounded-lg shadow p-4">
+      <div>
+       <img src=""
+        <h3 class="font-semibold text-sm mb-2">
+          ${issue.title}
+        </h3>
+        <p class="text-xs text-gray-500 mb-3">
+          ${issue.description} 
+         </P>
+
+    <div class="flex gap-2 mb-3"> 
+       <span class="text-xs bg-red-100 text-red-500 px-2 py-1 rounded">
+           BUG
+       </span>
+
+       <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded">
+          HELP WANTED
+        </span>
+     </div>
+     <hr>
+
+       <p class="text-xs text-gray-400">
+          #${issue.id} by ${issue.author}
+       </p>
+
+       <p class="text-xs text-gray-400">
+           ${issue.updatedAt}
+           </p>
+
+</div>
+
+` 
+  })
+}
+
+loadAll();

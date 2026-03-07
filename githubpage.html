@@ -56,23 +56,55 @@
   <section> 
   <div class=" flex flex-col gap-8"> 
   <div class="bg-white rounded-md shadow p-4 ">
-    <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50   rounded-md shadow"> All</button>
+    <button onclick="loadAll()" class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50   rounded-md shadow"> All</button>
     <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Open</button>
     <button class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Closed</button>
   </div>
   </div>
 </section>
 
-   <div class="bg-white rounded-nd shadow p-6">
-    <img src="./assets/Aperture.png" alt="Aperture.png">
-     <h1 class="font-bold font-3xl"> 50 issues </h1>
-     <p class="text-[#64748B]">Track and manage your project issues </p>
 
+<section> 
+   
+<div class="bg-white flex justify-between items-center rounded-md shadow mt-4 p-6">
+
+  <!-- <!-- LEFT SIDE -- -->
+
+  <div class="flex items-center gap-3">
+    <img src="./assets/Aperture.png" class="w-10" alt="Aperture">
+
+    <div>
+      <h1 class="font-bold text-lg">50 issues</h1>
+      <p class="text-[#64748B] text-sm">
+        Track and manage your project issues
+      </p>
+    </div>
   </div>
 
 
+  <!-- RIGHT SIDE -->
+
+  <div class="flex gap-4 text-sm">
+
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+      <span>Open</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+      <span>Closed</span>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
 <!-- issue card grid -->
-<div class="grid grid-cols-4 gap-6 mt-6">
+<div id="issue-container" class="grid grid-cols-4 gap-6 mt-6">
 
 </div>
 
@@ -80,6 +112,8 @@
 </main>
 
 <script src="./script/github.js"> </script>
+<script src="./script/signin.js"></script>  
 
 </body> 
+
 </html>
