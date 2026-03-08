@@ -150,12 +150,13 @@ const showClosed = () => {
 
 
     container.innerHTML +=`
-    <div class="bg-white rounded-lg shadow border-t-4 ${borderColor} p-4">
+    <div onclick="openModal(${issue.id})"
+       class="bg-white rounded-lg shadow border-t-4 ${borderColor} p-4 cursor-pointer">
 
      <div class="flex justify-end mb-2">
-       <span class=" bg-amber-100 text-[#D97706] text-md font-bold rounded-lg px-2 py-1">
-          ${priorityText}
-        </span>
+          <span class=" bg-amber-100 text-[#D97706] text-md font-bold rounded-lg px-2 py-1">
+             ${priorityText}
+          </span>
      </div>
 
       <h3 class="font-bold text-black text-sm mb-2">
@@ -202,6 +203,69 @@ const showClosed = () => {
 displayIssues(filteredIssues);
 
 });
+
+// Modal open.............
+
+const openModal = (id) => {
+
+const issue = allIssues.find(issue => issue.id === id);
+
+document.getElementById("modal-title").innerText = issue.title;
+document.getElementById("modal-description").innerText = issue.description;
+document.getElementById("modal-author").innerText = issue.author;
+document.getElementById("modal-assignee").innerText = issue.assignee || "Unassigned";
+
+const date = new Date(issue.createdAt).toLocaleDateString();
+
+ document.getElementById("modal-date").innerText = date;
+// status......
+ const status = document.getElementById("modal-status");
+
+   status.innerText = issue.status;
+
+   if(issue.status === "open"){
+   status.className ="bg-green-500 px-3 py-1 rounded-full text-white";
+}
+   else{
+   status.className ="bg-purple-500 px-3 py-1 rounded-full text-white";
+}
+
+
+// label.....
+   const labelsContainer = document.getElementById("modal-labels");
+
+     labelsContainer.innerHTML = "";
+     issue.labels.forEach(label => {
+     labelsContainer.innerHTML += `
+      <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm">
+      ${label}
+      </span>
+`;
+
+});
+
+// priority.......
+   const priority = document.getElementById("modal-priority");
+   priority.innerText = issue.priority.toUpperCase();
+
+    if(issue.priority === "high"){
+    priority.className = "bg-red-500 px-3 py-1 rounded text-white";
+}
+    else if(issue.priority === "medium"){
+    priority.className = "bg-yellow-500 px-3 py-1 rounded text-white";
+}
+    else{
+     priority.className = "bg-gray-500 px-3 py-1 rounded text-white";
+}
+
+      document.getElementById("issue-modal").classList.remove("hidden");
+
+}
+
+// modal close..........
+    function closeModal(){
+    document.getElementById("issue-modal").classList.add("hidden");
+}
 
 
 loadAll();
