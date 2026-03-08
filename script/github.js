@@ -4,6 +4,15 @@ const issuesContainer= document.getElementById("issues-container");
 const searchInput=document.getElementById("search-input");
 const searchBtn=document.getElementById("search-btn");
 
+// spinner........
+  function showSpinner(){
+  document.getElementById("loading-spinner").classList.remove("hidden");
+}
+
+  function hideSpinner(){
+  document.getElementById("loading-spinner").classList.add("hidden");
+}
+
 let issues = [];
 
   async function loadIssues(){
@@ -41,7 +50,7 @@ let allIssues = [];
 
 const buttons = document.querySelectorAll(".tab-btn");
 
-buttons.forEach(btn => {
+  buttons.forEach(btn => {
   btn.addEventListener("click", function(){
 
     // remove active from all
@@ -74,10 +83,6 @@ const loadAll= () =>{
 });
 
 };
-
-  const showAll = () => { 
-  showIssues(allIssues);
-};
 // "id": 2,
 // "title": "Add dark mode support",
 // "description": "Users are requesting a dark mode option. This would improve accessibility and user experience.",
@@ -93,19 +98,35 @@ const loadAll= () =>{
 // "updatedAt": "2024-01-16T09:15:00Z"
 
 const showOpen = () => {
+  showSpinner();
+  setTimeout(() => {
 
   const openIssues= allIssues.filter(issue => issue.status === "open");
   console.log(openIssues);
   showIssues(openIssues);
 
+  hideSpinner();
+
+}, 500);
+
 };
 
+
+
 const showClosed = () => {
+  showSpinner();
+  setTimeout(() => {
 
   const closedIssues = allIssues.filter(issue => issue.status === "closed");
   console.log(closedIssues);
   showIssues(closedIssues);
-}
+
+  hideSpinner();
+
+}, 500);
+
+};
+
 
 // issue count........
   const updateIssueCount= (count) => {

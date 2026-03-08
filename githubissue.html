@@ -67,7 +67,7 @@
 
     <button onclick="showOpen()" class="bg-indigo-100 tab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> Open</button>
 
-    <button onclick="showClosed()" class="bg-indigo-100  ab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> Closed</button>
+    <button onclick="showClosed()" class="bg-indigo-100  tab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> Closed</button>
 
     </div>
 
@@ -114,7 +114,12 @@
 </section>
 
 
-<!-- issue card grid -->
+  <!-- spinner -->
+    <div id="loading-spinner" class="hidden flex justify-center my-6">
+      <span class="loading loading-spinner loading-xl"> </span> 
+    </div>
+
+<!-- issue card  -->
 <div id="issues-container" class="grid grid-cols-4 gap-3 mt-6"> </div>
 
  <!-- Modal -->
