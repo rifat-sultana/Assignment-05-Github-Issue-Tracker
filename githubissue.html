@@ -14,6 +14,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
+<!-- font awesome -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
 <style>
      *{
           font-family: "Geist", sans-serif;
@@ -35,17 +40,17 @@
     </div>
 
     <!-- right side -->
-    <div class="join">
+  <div class="join">
 
-      <label class="input input-bordered join-item flex items-center gap-2">
-        <input type="text" class="grow" placeholder="Search issues..." />
-      </label>
+        <label class="input input-bordered input-sm join-item flex items-center gap-2"><i class="fas fa-magnifying-glass"></i>
+        <input id="search-input" type="text" placeholder="Search issues..." class="grow text-sm"/>
+        </label>
 
-      <button class="btn btn-primary join-item">
-        + New Issue
+     <button id="search-btn" class="btn btn-primary btn-sm join-item">
+        Search
       </button>
 
-    </div>
+</div>
 
   </div>
 </navbar>
@@ -55,10 +60,10 @@
 
   <section> 
   <div class=" flex flex-col gap-8"> 
-  <div class="bg-white rounded-md shadow p-4 ">
-    <button onclick="loadAll()" class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50   rounded-md shadow"> All</button>
-    <button onclick="showOpen()" class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Open</button>
-    <button onclick="showClosed()" class="tab-btn px-7 py-2 text-[14px] text-[#64748B] bg-gray-50  rounded-md shadow"> Closed</button>
+  <div class="bg-white rounded-md shadow p-4 flex gap-3 ">
+    <button onclick="loadAll()" class="bg-indigo-100 tab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> All</button>
+    <button onclick="showOpen()" class="bg-indigo-100 tab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> Open</button>
+    <button onclick="showClosed()" class="bg-indigo-100  ab-btn px-7 py-2 text-[14px] text-[#64748B] font-bold rounded-md shadow"> Closed</button>
   </div>
   </div>
 </section>
@@ -74,7 +79,7 @@
     <img src="./assets/Aperture.png" class="w-10" alt="Aperture">
 
     <div>
-      <h1 class="font-bold text-lg">50 issues</h1>
+      <h1 id="issue-count" class="font-bold text-lg"> 50 Issues</h1>
       <p class="text-[#64748B] text-sm">
         Track and manage your project issues
       </p>
@@ -104,9 +109,8 @@
 
 
 <!-- issue card grid -->
-<div id="issue-container" class="grid grid-cols-4 gap-6 mt-6">
-
-</div>
+<div id="issues-container" class="grid grid-cols-4 gap-3 mt-6"> </div>
+ 
 
 
 </main>
