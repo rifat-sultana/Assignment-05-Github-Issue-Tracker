@@ -221,7 +221,7 @@ const showClosed = () => {
    issue.description.toLowerCase().includes(searchValue)
 );
 
-displayIssues(filteredIssues);
+    displayIssues(filteredIssues);
 
 });
 
@@ -258,7 +258,7 @@ const date = new Date(issue.createdAt).toLocaleDateString();
      labelsContainer.innerHTML = "";
      issue.labels.forEach(label => {
      labelsContainer.innerHTML += `
-      <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm">
+      <span class="bg-orange-300 text-red-600 font-bold px-2 py-1 rounded-xl text-sm">
       ${label}
       </span>
 `;
@@ -270,13 +270,13 @@ const date = new Date(issue.createdAt).toLocaleDateString();
    priority.innerText = issue.priority.toUpperCase();
 
     if(issue.priority === "high"){
-    priority.className = "bg-red-500 px-3 py-1 rounded text-white";
+    priority.className = "bg-red-500 px-3 py-1 rounded-xl text-sm text-white";
 }
     else if(issue.priority === "medium"){
-    priority.className = "bg-yellow-500 px-3 py-1 rounded text-white";
+    priority.className = "bg-red-500 px-3 py-1 rounded-xl text-sm text-white";
 }
     else{
-     priority.className = "bg-gray-500 px-3 py-1 rounded text-white";
+     priority.className = "bg-red-500 px-2 py-1 rounded-xl text-sm text-white";
 }
 
       document.getElementById("issue-modal").classList.remove("hidden");
