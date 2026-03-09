@@ -160,8 +160,8 @@ const showClosed = () => {
 
     let labelHTML = "";
 
-      const labelsHTML = issue.labels
-      .map(label => `<span class=" bg-amber-200 badge badge-outline border px-2 py-1">${label}</span>`)
+      const labelsHTML = issue.labels.map(label => 
+        `<span class=" bg-amber-200 badge badge-outline border px-2 py-1">${label}</span>`)
       .join(" ");
 
 
@@ -195,11 +195,11 @@ const showClosed = () => {
      <hr>
 
      
-      <p class="text-xs text-gray-400 mt-2">
+      <p class="text-xs text-gray-600 my-2">
           #${issue.id} by ${issue.author}
       </p>
 
-       <p class="text-xs text-gray-400">
+       <p class="text-xs text-gray-600">
           ${newDate}
         </p>
 
@@ -248,7 +248,7 @@ const date = new Date(issue.createdAt).toLocaleDateString();
    status.className ="bg-green-500 px-3 py-1 rounded-full text-white";
 }
    else{
-   status.className ="bg-amber-200 text-red-600 px-3 py-1 rounded-full fond-bold ";
+   status.className ="bg-amber-200 text-red-600 px-3 py-1 rounded-full font-bold ";
 }
 
 
