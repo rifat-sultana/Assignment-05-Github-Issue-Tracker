@@ -248,7 +248,7 @@ const date = new Date(issue.createdAt).toLocaleDateString();
    status.className ="bg-green-500 px-3 py-1 rounded-full text-white";
 }
    else{
-   status.className ="bg-purple-500 px-3 py-1 rounded-full text-white";
+   status.className ="bg-amber-200 text-red-600 px-3 py-1 rounded-full fond-bold ";
 }
 
 
