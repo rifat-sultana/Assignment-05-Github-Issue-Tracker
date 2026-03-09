@@ -50,8 +50,8 @@ let allIssues = [];
 
 const buttons = document.querySelectorAll(".tab-btn");
 
-  buttons.forEach(btn => {
-  btn.addEventListener("click", function(){
+    buttons.forEach(btn => {
+    btn.addEventListener("click", function(){
 
     // remove active from all
    
